@@ -1,0 +1,266 @@
+dn: dc=hotelchain,dc=com
+objectClass: top
+objectClass: dcObject
+objectClass: organization
+o: HotelChain
+dc: hotelchain
+
+dn: ou=users,dc=hotelchain,dc=com
+objectClass: organizationalUnit
+ou: users
+
+dn: ou=groups,dc=hotelchain,dc=com
+objectClass: organizationalUnit
+ou: groups
+
+# Hotels
+dn: ou=hotel1,ou=users,dc=hotelchain,dc=com
+objectClass: organizationalUnit
+ou: hotel1
+
+dn: ou=hotel2,ou=users,dc=hotelchain,dc=com
+objectClass: organizationalUnit
+ou: hotel2
+
+# Groups for corporate network
+dn: cn=all_users,ou=groups,dc=hotelchain,dc=com
+objectClass: groupOfNames
+cn: all_users
+member: cn=dummy
+
+dn: cn=all_managers,ou=groups,dc=hotelchain,dc=com
+objectClass: groupOfNames
+cn: all_managers
+member: cn=dummy
+
+dn: cn=all_employees,ou=groups,dc=hotelchain,dc=com
+objectClass: groupOfNames
+cn: all_employees
+member: cn=dummy
+
+# Hotel 1 groups
+dn: cn=hotel1_users,ou=groups,dc=hotelchain,dc=com
+objectClass: groupOfNames
+cn: hotel1_users
+member: cn=dummy
+
+dn: cn=hotel1_managers,ou=groups,dc=hotelchain,dc=com
+objectClass: groupOfNames
+cn: hotel1_managers
+member: cn=dummy
+
+dn: cn=hotel1_employees,ou=groups,dc=hotelchain,dc=com
+objectClass: groupOfNames
+cn: hotel1_employees
+member: cn=dummy
+
+# Hotel 2 groups
+dn: cn=hotel2_users,ou=groups,dc=hotelchain,dc=com
+objectClass: groupOfNames
+cn: hotel2_users
+member: cn=dummy
+
+dn: cn=hotel2_managers,ou=groups,dc=hotelchain,dc=com
+objectClass: groupOfNames
+cn: hotel2_managers
+member: cn=dummy
+
+dn: cn=hotel2_employees,ou=groups,dc=hotelchain,dc=com
+objectClass: groupOfNames
+cn: hotel2_employees
+member: cn=dummy
+
+# Hotel 1 managers
+dn: cn=manager1_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+objectClass: inetOrgPerson
+cn: manager1_hotel1
+sn: manager1
+userPassword: manager1pass
+mail: manager1.hotel1@hotelchain.com
+
+dn: cn=manager2_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+objectClass: inetOrgPerson
+cn: manager2_hotel1
+sn: manager2
+userPassword: manager2pass
+mail: manager2.hotel1@hotelchain.com
+
+# Hotel 1 employees
+dn: cn=employee1_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+objectClass: inetOrgPerson
+cn: employee1_hotel1
+sn: employee1
+userPassword: employee1pass
+mail: employee1.hotel1@hotelchain.com
+
+dn: cn=employee2_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+objectClass: inetOrgPerson
+cn: employee2_hotel1
+sn: employee2
+userPassword: employee2pass
+mail: employee2.hotel1@hotelchain.com
+
+dn: cn=employee3_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+objectClass: inetOrgPerson
+cn: employee3_hotel1
+sn: employee3
+userPassword: employee3pass
+mail: employee3.hotel1@hotelchain.com
+
+dn: cn=employee4_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+objectClass: inetOrgPerson
+cn: employee4_hotel1
+sn: employee4
+userPassword: employee4pass
+mail: employee4.hotel1@hotelchain.com
+
+dn: cn=employee5_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+objectClass: inetOrgPerson
+cn: employee5_hotel1
+sn: employee5
+userPassword: employee5pass
+mail: employee5.hotel1@hotelchain.com
+
+# Hotel 2 managers
+dn: cn=manager1_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+objectClass: inetOrgPerson
+cn: manager1_hotel2
+sn: manager1
+userPassword: manager1pass
+mail: manager1.hotel2@hotelchain.com
+
+dn: cn=manager2_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+objectClass: inetOrgPerson
+cn: manager2_hotel2
+sn: manager2
+userPassword: manager2pass
+mail: manager2.hotel2@hotelchain.com
+
+# Hotel 2 employees
+dn: cn=employee1_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+objectClass: inetOrgPerson
+cn: employee1_hotel2
+sn: employee1
+userPassword: employee1pass
+mail: employee1.hotel2@hotelchain.com
+
+dn: cn=employee2_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+objectClass: inetOrgPerson
+cn: employee2_hotel2
+sn: employee2
+userPassword: employee2pass
+mail: employee2.hotel2@hotelchain.com
+
+dn: cn=employee3_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+objectClass: inetOrgPerson
+cn: employee3_hotel2
+sn: employee3
+userPassword: employee3pass
+mail: employee3.hotel2@hotelchain.com
+
+dn: cn=employee4_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+objectClass: inetOrgPerson
+cn: employee4_hotel2
+sn: employee4
+userPassword: employee4pass
+mail: employee4.hotel2@hotelchain.com
+
+dn: cn=employee5_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+objectClass: inetOrgPerson
+cn: employee5_hotel2
+sn: employee5
+userPassword: employee5pass
+mail: employee5.hotel2@hotelchain.com
+
+# Add members to groups
+dn: cn=hotel1_managers,ou=groups,dc=hotelchain,dc=com
+changetype: modify
+add: member
+member: cn=manager1_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+member: cn=manager2_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+
+dn: cn=hotel1_employees,ou=groups,dc=hotelchain,dc=com
+changetype: modify
+add: member
+member: cn=employee1_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+member: cn=employee2_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+member: cn=employee3_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+member: cn=employee4_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+member: cn=employee5_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+
+dn: cn=hotel1_users,ou=groups,dc=hotelchain,dc=com
+changetype: modify
+add: member
+member: cn=manager1_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+member: cn=manager2_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+member: cn=employee1_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+member: cn=employee2_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+member: cn=employee3_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+member: cn=employee4_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+member: cn=employee5_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+
+dn: cn=hotel2_managers,ou=groups,dc=hotelchain,dc=com
+changetype: modify
+add: member
+member: cn=manager1_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+member: cn=manager2_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+
+dn: cn=hotel2_employees,ou=groups,dc=hotelchain,dc=com
+changetype: modify
+add: member
+member: cn=employee1_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+member: cn=employee2_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+member: cn=employee3_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+member: cn=employee4_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+member: cn=employee5_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+
+dn: cn=hotel2_users,ou=groups,dc=hotelchain,dc=com
+changetype: modify
+add: member
+member: cn=manager1_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+member: cn=manager2_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+member: cn=employee1_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+member: cn=employee2_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+member: cn=employee3_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+member: cn=employee4_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+member: cn=employee5_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+
+dn: cn=all_managers,ou=groups,dc=hotelchain,dc=com
+changetype: modify
+add: member
+member: cn=manager1_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+member: cn=manager2_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+member: cn=manager1_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+member: cn=manager2_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+
+dn: cn=all_employees,ou=groups,dc=hotelchain,dc=com
+changetype: modify
+add: member
+member: cn=employee1_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+member: cn=employee2_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+member: cn=employee3_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+member: cn=employee4_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+member: cn=employee5_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+member: cn=employee1_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+member: cn=employee2_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+member: cn=employee3_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+member: cn=employee4_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+member: cn=employee5_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+
+dn: cn=all_users,ou=groups,dc=hotelchain,dc=com
+changetype: modify
+add: member
+member: cn=manager1_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+member: cn=manager2_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+member: cn=employee1_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+member: cn=employee2_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+member: cn=employee3_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+member: cn=employee4_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+member: cn=employee5_hotel1,ou=hotel1,ou=users,dc=hotelchain,dc=com
+member: cn=manager1_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+member: cn=manager2_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+member: cn=employee1_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+member: cn=employee2_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+member: cn=employee3_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+member: cn=employee4_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
+member: cn=employee5_hotel2,ou=hotel2,ou=users,dc=hotelchain,dc=com
